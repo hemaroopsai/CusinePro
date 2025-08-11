@@ -1,9 +1,17 @@
-
 import streamlit as st
+from Method import get_restaurant_and_menu
 
 st.title("LangChain Restaurant Recommender 🍽️")
 
-cuisine = st.text_input("Enter cuisine type:")
-if cuisine:
-    st.write(f"Recommended restaurant for {cuisine}: ChatGPT's Kitchen")
-    st.write(f"Sample Menu for {cuisine}: Dish 1, Dish 2, Dish 3")
+cuisine = st.sidebar.selectbox(
+    "Pick a cuisine",
+    ("Indian", "Mexican", "Italian", "American", "Chinese", "Japanese", "Arabian", "French")
+)
+
+if st.button("Get Recommendation"):
+    result = get_restaurant_and_menu(cuisine)
+    st.subheader("Restaurant Name")
+    st.write(result["restaurant_name"])
+
+    st.subheader("Menu")
+    st.write(result["menu"])
