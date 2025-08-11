@@ -5,7 +5,7 @@ from langchain.schema.runnable import RunnableMap
 
 import os
 
-os.environ["OPENAI_API_KEY"] = "3b6b1ede3b255be31ff6e0b68c4188e80a50f62faca210c39d6807837bb7e4f5"
+os.environ["OPENAI_API_KEY"] = "paste your APIkey"
 os.environ["OPENAI_BASE_URL"] = "https://api.together.xyz/v1"
 from langchain_openai import ChatOpenAI
 
